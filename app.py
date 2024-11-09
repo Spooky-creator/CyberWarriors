@@ -8,17 +8,17 @@ app = Flask(__name__)
 UPLOAD_FOLDER = "upload"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 def get_uploaded_files():
-    # List all files in the upload folder 
+    
     files = os.listdir(app.config["UPLOAD_FOLDER"])
     sample_files = []
     
     for file in files:
         if os.path.isfile(os.path.join(app.config["UPLOAD_FOLDER"], file)):
-            # If the file is 'remcos_agent', treat it differently
+          
             if file == "remcos_agent":
                 sample_files.append({
-                    "name": file,  # Name remains 'remcos_agent'
-                    "status": "Clean",  # You can customize this status
+                    "name": file,  
+                    "status": "Clean",  
                     "threat_level": "threat"  # You can customize this threat level
                 })
             else:
