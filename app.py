@@ -28,10 +28,8 @@ def get_uploaded_files():
                     "status": "clean",  # Initial status, can change after scanning
                     "threat_level": "threat"  # Default threat level
                 })
-    
     return sample_files
 app = Flask(__name__)
-
 UPLOAD_FOLDER = "upload"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -48,7 +46,6 @@ def get_uploaded_files():
                 "threat_level": "threat"  # Default threat level, can change after scanning
             })
     return sample_files
-
 sample_files = [
     {"name": "remcos_agent", "status": "Clean", "threat_level": "threat"},
 ]
